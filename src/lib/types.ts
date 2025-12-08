@@ -16,31 +16,31 @@ export interface ResumeData {
   contact: {
     email: string;
     tel: string;
-    social: Array<{
+    social: ReadonlyArray<{
       name: string;
       url: string;
       icon: IconType;
     }>;
   };
-  education: Array<{
+  education: ReadonlyArray<{
     school: string;
     degree: string;
     start: string;
     end: string;
   }>;
-  work: Array<{
+  work: ReadonlyArray<{
     company: string;
     link: string;
-    badges: string[];
+    badges: readonly string[];
     title: string;
     start: string;
     end: string | null;
     description: string | React.ReactNode;
   }>;
-  skills: string[];
-  projects: Array<{
+  skills: readonly string[];
+  projects: ReadonlyArray<{
     title: string;
-    techStack: string[];
+    techStack: readonly string[];
     description: string;
     link?: {
       label: string;
