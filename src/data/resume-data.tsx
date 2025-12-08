@@ -13,8 +13,8 @@ export const RESUME_DATA: ResumeData = {
       GitLab administration, and building scalable, reliable production systems.
     </>
   ),
-  avatarUrl: "",
-  personalWebsiteUrl: "",
+  avatarUrl: "https://harrygrace.me/images/avatar.jpg",
+  personalWebsiteUrl: "https://harrygrace.me",
   contact: {
     email: "hagrace4@proton.me",
     tel: "+18184815722",
