@@ -1,15 +1,15 @@
 import { GlobeIcon, MailIcon, PhoneIcon } from "lucide-react";
-import Image, { type StaticImageData } from "next/image";
-import React from "react";
+import type React from "react";
 import { Avatar } from "@/components/avatar";
-import { Button } from "@/components/ui/button";
 import { GitHubIcon, LinkedInIcon } from "@/components/icons";
 import { XIcon } from "@/components/icons/x-icon";
+import { Button } from "@/components/ui/button";
 import { RESUME_DATA } from "@/data/resume-data";
-import type { ResumeIcon, IconType } from "@/lib/types";
+import type { IconType } from "@/lib/types";
 
 // Type-safe icon mapping
 // Using 'any' for the component type to accommodate both custom SVG icons and Lucide icons
+// biome-ignore lint/suspicious/noExplicitAny: Lucide and custom SVG icons have incompatible prop types
 const ICON_MAP: Record<IconType, React.ComponentType<any>> = {
   github: GitHubIcon,
   linkedin: LinkedInIcon,
@@ -24,10 +24,7 @@ interface LocationLinkProps {
   locationLink: typeof RESUME_DATA.locationLink;
 }
 
-function LocationLink({
-  location,
-  locationLink,
-}: LocationLinkProps) {
+function LocationLink({ location, locationLink }: LocationLinkProps) {
   return (
     <p className="max-w-md items-center text-pretty font-mono text-xs text-foreground">
       <a
@@ -50,13 +47,9 @@ interface SocialButtonProps {
   label: string;
 }
 
-function SocialButton({
-  href,
-  iconType,
-  label,
-}: SocialButtonProps) {
+function SocialButton({ href, iconType, label }: SocialButtonProps) {
   const IconComponent = ICON_MAP[iconType];
-  
+
   return (
     <Button className="size-8" variant="outline" size="icon" asChild={true}>
       <a
@@ -76,10 +69,7 @@ interface ContactButtonsProps {
   personalWebsiteUrl?: string;
 }
 
-function ContactButtons({
-  contact,
-  personalWebsiteUrl,
-}: ContactButtonsProps) {
+function ContactButtons({ contact, personalWebsiteUrl }: ContactButtonsProps) {
   return (
     <ul
       className="flex list-none gap-x-1 pt-1 font-mono text-sm text-foreground/80 print:hidden"
@@ -130,10 +120,7 @@ interface PrintContactProps {
   personalWebsiteUrl?: string;
 }
 
-function PrintContact({
-  contact,
-  personalWebsiteUrl,
-}: PrintContactProps) {
+function PrintContact({ contact, personalWebsiteUrl }: PrintContactProps) {
   return (
     <div className="hidden gap-x-2 font-mono text-sm text-foreground/80 print:flex print:text-[12px]">
       {personalWebsiteUrl && (

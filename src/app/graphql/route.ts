@@ -8,6 +8,7 @@ import { buildSchema } from "type-graphql";
 import { MeResolver } from "../../apollo/resolvers";
 
 let apolloServer: ApolloServer;
+// biome-ignore lint/suspicious/noExplicitAny: Apollo Server handler type is complex and varies by version
 let handler: any;
 
 try {

@@ -49,14 +49,7 @@ export const RESUME_DATA: ResumeData = {
     {
       company: "Businessolver",
       link: "https://www.businessolver.com/",
-      badges: [
-        "Remote",
-        "AWS",
-        "CloudFormation",
-        "Ansible",
-        "GitLab",
-        "Linux",
-      ],
+      badges: ["Remote", "AWS", "CloudFormation", "Ansible", "GitLab", "Linux"],
       title: "DevOps Engineer I",
       start: "Mar 2024",
       end: null,
