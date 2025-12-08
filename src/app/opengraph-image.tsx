@@ -1,5 +1,5 @@
 import { ImageResponse } from "next/og";
-import { RESUME_DATA } from "../data/resume-data.tsx.old";
+import { RESUME_DATA } from "../data/resume-data";
 
 export const runtime = "edge";
 
