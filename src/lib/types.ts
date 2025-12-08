@@ -40,6 +40,12 @@ export interface ResumeData {
     description: string | React.ReactNode;
   }>;
   skills: readonly string[];
+  certifications: ReadonlyArray<{
+    title: string;
+    issuer: string;
+    date: string;
+    status: "active" | "in-progress";
+  }>;
   projects: ReadonlyArray<{
     title: string;
     techStack: readonly string[];
@@ -92,6 +98,13 @@ export interface GraphQLProject {
   link?: GraphQLLink;
 }
 
+export interface GraphQLCertification {
+  title: string;
+  issuer: string;
+  date: string;
+  status: string;
+}
+
 export interface GraphQLMe {
   name: string;
   initials: string;
@@ -105,6 +118,7 @@ export interface GraphQLMe {
   education: GraphQLEducation[];
   work: GraphQLWork[];
   skills: string[];
+  certifications: GraphQLCertification[];
   projects: GraphQLProject[];
 }
 
@@ -148,6 +162,7 @@ export function resumeDataToGraphQL(data: ResumeData): GraphQLMe {
       description: reactToString(job.description),
     })),
     skills: [...data.skills],
+    certifications: [...data.certifications],
     projects: data.projects.map((project) => ({
       title: project.title,
       techStack: [...project.techStack],

@@ -4,6 +4,8 @@
 .gitignore
 /workspace
 /src/data/resume-data.tsx.old
+/config/*
+/docs/*
 
 # dependencies
 /node_modules

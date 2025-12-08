@@ -144,6 +144,32 @@ export const RESUME_DATA: ResumeData = {
     "Windows",
     "macOS",
   ],
+  certifications: [
+    {
+      title: "AWS Certified Cloud Practitioner",
+      issuer: "Amazon Web Services",
+      date: "Dec 2022",
+      status: "active",
+    },
+    {
+      title: "Certified Kubernetes Administrator (CKA)",
+      issuer: "Cloud Native Computing Foundation",
+      date: "In Progress",
+      status: "in-progress",
+    },
+    {
+      title: "Certified Cloud Native Platform Engineering Associate (CNPA)",
+      issuer: "Cloud Native Computing Foundation",
+      date: "In Progress",
+      status: "in-progress",
+    },
+    {
+      title: "Amateur Radio License — Technician Class",
+      issuer: "FCC",
+      date: "Active",
+      status: "active",
+    },
+  ],
   projects: [
     {
       title: "Automated Resume Deployment with GitHub Actions",
