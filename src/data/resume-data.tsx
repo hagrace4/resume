@@ -146,6 +146,23 @@ export const RESUME_DATA: ResumeData = {
   ],
   projects: [
     {
+      title: "Automated Resume Deployment with GitHub Actions",
+      techStack: [
+        "GitHub Actions",
+        "Docker",
+        "Oracle Cloud",
+        "nginx",
+        "SSH",
+        "CI/CD",
+      ],
+      description:
+        "Built end-to-end CI/CD pipeline using GitHub Actions to automatically build, test, containerize, and deploy a Next.js resume application to Oracle Cloud Infrastructure. Implemented automated Docker image builds with GitHub Container Registry, SSH-based deployment automation, and container lifecycle management with health checks and rollback capabilities.",
+      link: {
+        label: "github.com",
+        href: "https://github.com/hagrace4/resume",
+      },
+    },
+    {
       title: "Splunk Cloud Logging & Ingestion Program",
       techStack: ["Splunk", "Universal Forwarders", "GitLab", "OSSEC"],
       description:
