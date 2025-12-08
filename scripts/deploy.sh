@@ -8,7 +8,7 @@ set -euo pipefail  # Exit on error, undefined variables, and pipe failures
 IMAGE_NAME="${1:-ghcr.io/hagrace4/resume:latest}"
 CONTAINER_NAME="resume-app"
 PORT="3000"
-LOG_FILE="/var/log/resume-deploy.log"
+LOG_FILE="$HOME/resume-deploy.log"
 
 # Logging function
 log() {
