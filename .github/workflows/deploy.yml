@@ -53,10 +53,11 @@ jobs:
       
       # Step 3: Install pnpm package manager
       # This project uses pnpm instead of npm
+      # Version 9 is needed to read the lockfileVersion: '9.0' format
       - name: Install pnpm
         uses: pnpm/action-setup@v2
         with:
-          version: 8
+          version: 9
       
       # Step 4: Install project dependencies
       # --frozen-lockfile ensures we use exact versions from pnpm-lock.yaml
