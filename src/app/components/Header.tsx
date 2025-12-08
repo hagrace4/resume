@@ -9,7 +9,8 @@ import { RESUME_DATA } from "@/data/resume-data";
 import type { ResumeIcon, IconType } from "@/lib/types";
 
 // Type-safe icon mapping
-const ICON_MAP: Record<IconType, React.ComponentType<React.SVGProps<SVGSVGElement>>> = {
+// Using 'any' for the component type to accommodate both custom SVG icons and Lucide icons
+const ICON_MAP: Record<IconType, React.ComponentType<any>> = {
   github: GitHubIcon,
   linkedin: LinkedInIcon,
   x: XIcon,
