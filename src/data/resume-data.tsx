@@ -1,236 +1,192 @@
 import type { ResumeData } from "@/lib/types";
 
 export const RESUME_DATA: ResumeData = {
-  name: "Bartosz Jarocki",
-  initials: "BJ",
-  location: "Wrocław, Poland, CET",
-  locationLink: "https://www.google.com/maps/place/Wrocław",
-  about: "Full Stack Engineer dedicated to building high-quality products.",
+  name: "Harry Grace",
+  initials: "HG",
+  location: "Northridge, CA",
+  locationLink: "https://www.google.com/maps/place/Northridge,+CA",
+  about: "DevOps Engineer specializing in AWS infrastructure and automation.",
   summary: (
     <>
-      Full Stack Engineer specializing in high-performance React applications,
-      scalable Node.js services, and real-time collaboration systems.
-      Experienced in technical architecture design and remote team leadership.
+      DevOps Engineer with expertise in AWS cloud infrastructure, Linux systems
+      engineering, and CI/CD automation. Experienced in CloudFormation, Ansible,
+      GitLab administration, and building scalable, reliable production systems.
     </>
   ),
-  avatarUrl: "https://avatars.githubusercontent.com/u/1017620?v=4",
-  personalWebsiteUrl: "https://jarocki.me",
+  avatarUrl: "",
+  personalWebsiteUrl: "",
   contact: {
-    email: "bartosz.jarocki@hey.com",
-    tel: "+48530213401",
+    email: "hagrace4@proton.me",
+    tel: "+18184815722",
     social: [
       {
         name: "GitHub",
-        url: "https://github.com/BartoszJarocki",
+        url: "https://github.com/hagrace4",
         icon: "github",
       },
       {
         name: "LinkedIn",
-        url: "https://www.linkedin.com/in/bjarocki/",
+        url: "https://www.linkedin.com/in/hagrace4",
         icon: "linkedin",
-      },
-      {
-        name: "X",
-        url: "https://x.com/BartoszJarocki",
-        icon: "x",
       },
     ],
   },
   education: [
     {
-      school: "Wrocław University of Technology",
-      degree: "Bachelor's Degree in Control systems engineering and Robotics",
-      start: "2007",
-      end: "2010",
+      school: "California State University - Northridge",
+      degree: "BS in Computer Information Technology",
+      start: "2020",
+      end: "2024",
+    },
+    {
+      school: "California Lutheran University",
+      degree: "Bioengineering",
+      start: "2008",
+      end: "2011",
     },
   ],
   work: [
     {
-      company: "Motion",
-      link: "https://motionapp.com/",
-      badges: ["Remote", "AI", "React", "Next.js", "TypeScript", "AdonisJS"],
-      title: "Senior Software Engineer",
-      start: "2025",
+      company: "Businessolver",
+      link: "https://www.businessolver.com/",
+      badges: [
+        "Remote",
+        "AWS",
+        "CloudFormation",
+        "Ansible",
+        "GitLab",
+        "Linux",
+      ],
+      title: "DevOps Engineer I",
+      start: "Mar 2024",
       end: null,
       description: (
         <>
-          Working on internal AI agents platform allowing marketing specialists
-          to create AI workflows.
-        </>
-      ),
-    },
-    {
-      company: "Film.io",
-      link: "https://film.io",
-      badges: ["Remote", "React", "Next.js", "TypeScript", "Node.js"],
-      title: "Software Architect",
-      start: "2024",
-      end: "2025",
-      description: (
-        <>
-          Leading technical architecture of a blockchain-based film funding
-          platform.
           <ul className="list-inside list-disc">
             <li>
-              Architecting migration from CRA to Next.js for improved
-              performance, SEO, and DX
+              Led AWS environment provisioning via modular CloudFormation (VPC,
+              subnets, routing, security groups, EC2/RDS) with parameterized
+              stacks and change sets; integrated Ansible for post-provision
+              bootstrapping
             </li>
             <li>
-              Established release process enabling faster deployments and
-              reliable rollbacks
+              Linux systems engineering & operations: standardized Amazon
+              Linux/OL8 baselines with Ansible; managed systemd services,
+              SELinux, firewalld, and OS patch cycles; implemented user/sudo &
+              SSH key management, logrotate/auditd, and kernel/network tuning
+              for production reliability
             </li>
             <li>
-              Implementing system-wide monitoring and security improvements
+              Managed and owned GitLab and org-wide CI/CD: administered runners,
+              optimized pipelines (caching, artifacts, parallelization),
+              enforced protected branches and merge checks, and created reusable
+              templates to standardize build/test/deploy across teams; improved
+              reliability and delivery speed
             </li>
           </ul>
         </>
       ),
     },
     {
-      company: "Parabol",
-      link: "https://parabol.co",
-      badges: [
-        "Remote",
-        "React",
-        "TypeScript",
-        "Node.js",
-        "GraphQL",
-        "Tailwind CSS",
-      ],
-      title: "Senior Full Stack Developer",
-      start: "2021",
-      end: "2024",
+      company: "Businessolver",
+      link: "https://www.businessolver.com/",
+      badges: ["Remote", "AWS", "Ansible", "Splunk", "Route53"],
+      title: "DevOps Intern",
+      start: "Jun 2023",
+      end: "Mar 2024",
       description: (
         <>
-          Senior developer and squad leader for an enterprise agile meeting
-          platform.
           <ul className="list-inside list-disc">
             <li>
-              Built design system with Tailwind CSS, improving development speed
-              and time to market
+              Developed Ansible plays to automate DKIM creation for a mail
+              server and configured DNS records on AWS Route53, enhancing email
+              security and streamlining domain management processes
             </li>
             <li>
-              Implemented engineering practices: PR automation, code review
-              guidelines, and workflows
+              Improved a critical database server script to ensure automatic
+              restart upon server reboot. Integrated Splunk for real-time
+              alerting, significantly enhancing system reliability and reducing
+              downtime in case of tunnel failures
             </li>
             <li>
-              Open source contributions to Relay DevTools and React i18n tooling
+              Updated and managed SSL certificates on internal servers, ensuring
+              secure and encrypted communication, and maintaining compliance
+              with security standards
+            </li>
+            <li>
+              Shadowed experienced DevOps Engineers, gaining insights into
+              advanced system administration, automation strategies, and best
+              practices in a real-world technology environment
             </li>
           </ul>
         </>
       ),
-    },
-    {
-      company: "Clevertech",
-      link: "https://clevertech.biz",
-      badges: ["Remote", "React", "TypeScript", "Node.js", "Android", "Kotlin"],
-      title: "Lead Android Developer → Full Stack Developer",
-      start: "2015",
-      end: "2021",
-      description: (
-        <>
-          Successfully transitioned from mobile to full-stack development while
-          leading distributed teams.
-          <ul className="list-inside list-disc">
-            <li>
-              Led frontend team at Evercast, building real-time platform
-              supporting 30+ users per room with HD streaming and collaboration
-              tools
-            </li>
-            <li>
-              Developed offline-first Android app for DKMS, improving donor
-              registration process
-            </li>
-            <li>
-              Led development teams across multiple successful client projects
-            </li>
-          </ul>
-        </>
-      ),
-    },
-    {
-      company: "Jojo Mobile",
-      link: "https://bsgroup.eu/",
-      badges: ["On Site", "Android", "Java", "Kotlin"],
-      title: "Android Developer → Lead Android Developer",
-      start: "2012",
-      end: "2015",
-      description: (
-        <>
-          First Android developer, grew and led a team of 15+ engineers while
-          establishing engineering culture.
-          <ul className="list-inside list-disc">
-            <li>
-              Developed apps for major Polish companies including LOT, Polskie
-              Radio, and Agora
-            </li>
-            <li>Built and mentored high-performing mobile development team</li>
-          </ul>
-        </>
-      ),
-    },
-    {
-      company: "Nokia Siemens Networks",
-      link: "https://www.nokia.com",
-      badges: ["On Site", "C/C++", "LTE", "Agile"],
-      title: "C/C++ Developer",
-      start: "2010",
-      end: "2012",
-      description:
-        "Developed software for LTE base stations at enterprise scale, gaining strong fundamentals in software architecture, testing practices, and cross-team collaboration.",
     },
   ],
   skills: [
-    "React/Next.js/Remix",
-    "TypeScript",
-    "Tailwind CSS",
-    "Design Systems",
-    "WebRTC",
-    "WebSockets",
-    "Node.js",
-    "GraphQL",
-    "Relay",
-    "System Architecture",
-    "Remote Team Leadership",
+    "Python",
+    "Bash",
+    "YAML",
+    "AWS CloudFormation",
+    "Route53",
+    "ACM",
+    "EC2",
+    "RDS",
+    "VPC",
+    "S3",
+    "CloudWatch",
+    "SSM",
+    "KMS",
+    "Ansible",
+    "systemd",
+    "Git",
+    "GitLab",
+    "SSL/TLS",
+    "DNS",
+    "DKIM/DMARC/SPF",
+    "Splunk",
+    "Nagios",
+    "Checkmk",
+    "Linux",
+    "Windows",
+    "macOS",
   ],
   projects: [
     {
-      title: "Monito",
-      techStack: ["TypeScript", "Next.js", "Browser Extension", "PostgreSQL"],
+      title: "Splunk Cloud Logging & Ingestion Program",
+      techStack: ["Splunk", "Universal Forwarders", "GitLab", "OSSEC"],
       description:
-        "Browser extension for debugging web applications. Includes taking screenshots, screen recording, E2E tests generation and generating bug reports",
+        "Deployed and configured Splunk Universal Forwarders across 150+ DevOps-managed servers for consistent ingestion into Splunk Cloud. Built new monitoring inputs for GitLab instances and remediated misconfigured OSSEC setup.",
       link: {
-        label: "monito.dev",
-        href: "https://monito.dev/",
+        label: "",
+        href: "",
       },
     },
     {
-      title: "Consultly",
+      title: "Containerization Rollout",
+      techStack: ["Ansible", "Docker", "JVM", "Configuration Management"],
+      description:
+        "Authored/updated Ansible roles and plays to deploy containers with parameterized JVM options and environment variables. Implemented environment-specific configuration to eliminate server drift and coordinated change controls for each stage.",
+      link: {
+        label: "",
+        href: "",
+      },
+    },
+    {
+      title: "AWS Environment Provisioning & Baseline",
       techStack: [
-        "TypeScript",
-        "Next.js",
-        "Vite",
-        "GraphQL",
-        "WebRTC",
-        "Tailwind CSS",
-        "PostgreSQL",
-        "Redis",
+        "AWS CloudFormation",
+        "VPC",
+        "EC2",
+        "RDS",
+        "Ansible",
+        "Route53",
       ],
       description:
-        "Platform for online consultations with real-time video meetings and scheduling",
+        "Built repeatable dev/stage/prod environments using modular CloudFormation stacks (VPC, subnets, routing, security groups, compute/database layers). Parameterized templates for account/region reuse and authored runbooks enabling self-service provisioning.",
       link: {
-        label: "consultly.com",
-        href: "https://consultly.com/",
-      },
-    },
-    {
-      title: "Minimalist CV",
-      techStack: ["TypeScript", "Next.js", "Tailwind CSS"],
-      description:
-        "An open source minimalist, print friendly CV template with a focus on readability and clean design. >9k stars on GitHub",
-      link: {
-        label: "Minimalist CV",
-        href: "https://github.com/BartoszJarocki/cv",
+        label: "",
+        href: "",
       },
     },
   ],

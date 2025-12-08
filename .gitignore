@@ -1,5 +1,10 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+/.kiro
+.gitignore
+/workspace
+/src/data/resume-data.tsx.old
+
 # dependencies
 /node_modules
 /.pnp
