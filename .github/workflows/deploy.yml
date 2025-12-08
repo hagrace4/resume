@@ -1,0 +1,173 @@
+# GitHub Actions Workflow for Resume Application CI/CD
+# This workflow automatically builds, tests, and deploys the resume app to Oracle Cloud
+
+# Workflow name - appears in GitHub Actions UI
+name: Deploy Resume Application
+
+# TRIGGERS: Define when this workflow runs
+on:
+  # Trigger 1: Automatic - runs when code is pushed to main branch
+  push:
+    branches:
+      - main
+  
+  # Trigger 2: Manual - adds a "Run workflow" button in GitHub UI
+  # This lets you deploy on-demand without pushing code
+  workflow_dispatch:
+    inputs:
+      git_ref:
+        description: 'Git reference to deploy (branch, tag, or commit SHA)'
+        required: false
+        default: 'main'
+        type: string
+
+# JOBS: The actual work to be done
+# Jobs run in parallel by default, but we'll make them sequential using "needs"
+jobs:
+  # ============================================================================
+  # JOB 1: Build and Test
+  # ============================================================================
+  build-and-test:
+    name: Build and Test Application
+    
+    # Runner: The machine that executes this job
+    # ubuntu-latest = GitHub's free Ubuntu Linux machine
+    runs-on: ubuntu-latest
+    
+    # Steps: Individual tasks within this job (run sequentially)
+    steps:
+      # Step 1: Get the code from the repository
+      # "actions/checkout" is a pre-built action from GitHub
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          # If manually triggered with a specific ref, use that; otherwise use the pushed commit
+          ref: ${{ github.event.inputs.git_ref || github.sha }}
+      
+      # Step 2: Install Node.js
+      # We need Node.js to build the Next.js application
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      
+      # Step 3: Install pnpm package manager
+      # This project uses pnpm instead of npm
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      
+      # Step 4: Install project dependencies
+      # --frozen-lockfile ensures we use exact versions from pnpm-lock.yaml
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      
+      # Step 5: Build the Next.js application
+      # This compiles TypeScript and creates optimized production files
+      - name: Build application
+        run: pnpm build
+      
+      # Step 6: Run code quality checks
+      # Biome checks linting and formatting
+      - name: Run code quality checks
+        run: pnpm check
+
+  # ============================================================================
+  # JOB 2: Build and Push Docker Image
+  # ============================================================================
+  build-docker:
+    name: Build and Push Docker Image
+    runs-on: ubuntu-latest
+    
+    # DEPENDENCY: This job only runs if build-and-test succeeds
+    # This is how we create a pipeline: build → docker → deploy
+    needs: build-and-test
+    
+    # Permissions needed to push to GitHub Container Registry
+    permissions:
+      contents: read
+      packages: write
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.git_ref || github.sha }}
+      
+      # Docker Buildx: Advanced Docker builder with better caching
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      
+      # Login to GitHub Container Registry (ghcr.io)
+      # GITHUB_TOKEN is automatically provided by GitHub Actions
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      
+      # Extract metadata for Docker tags
+      # This creates tags like: ghcr.io/username/resume:sha-abc123 and :latest
+      - name: Extract Docker metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ghcr.io/${{ github.repository_owner }}/resume
+          tags: |
+            type=sha,prefix=sha-
+            type=raw,value=latest
+      
+      # Build and push Docker image
+      # Uses the Dockerfile in the repository root
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  # ============================================================================
+  # JOB 3: Deploy to Oracle Cloud VM
+  # ============================================================================
+  deploy:
+    name: Deploy to Oracle Cloud
+    runs-on: ubuntu-latest
+    
+    # DEPENDENCY: Only runs if Docker image was built successfully
+    needs: build-docker
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      # Setup SSH key for connecting to Oracle Cloud VM
+      # The private key is stored in GitHub Secrets (we'll add this later)
+      - name: Setup SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.ORACLE_VM_SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.ORACLE_VM_HOST }} >> ~/.ssh/known_hosts
+      
+      # Copy deployment script to the VM
+      - name: Copy deployment script to VM
+        run: |
+          scp -i ~/.ssh/id_rsa scripts/deploy.sh ${{ secrets.ORACLE_VM_USER }}@${{ secrets.ORACLE_VM_HOST }}:/tmp/deploy.sh
+      
+      # Execute deployment on the VM
+      # This will pull the new Docker image and restart the container
+      - name: Deploy application
+        run: |
+          ssh -i ~/.ssh/id_rsa ${{ secrets.ORACLE_VM_USER }}@${{ secrets.ORACLE_VM_HOST }} \
+            "chmod +x /tmp/deploy.sh && /tmp/deploy.sh ghcr.io/${{ github.repository_owner }}/resume:latest"
+      
+      # Verify deployment succeeded
+      - name: Verify deployment
+        run: |
+          ssh -i ~/.ssh/id_rsa ${{ secrets.ORACLE_VM_USER }}@${{ secrets.ORACLE_VM_HOST }} \
+            "docker ps | grep resume-app && curl -f http://localhost:3000 || exit 1"
