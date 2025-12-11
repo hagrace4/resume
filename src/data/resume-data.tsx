@@ -98,16 +98,16 @@ export const RESUME_DATA: ResumeData = {
             <li>
               Developed comprehensive Ansible automation scripts for developer
               team environments, reducing cognitive load and accelerating inner
-              loop development cycles; standardized environment provisioning
-              and configuration management to improve developer productivity and
+              loop development cycles; standardized environment provisioning and
+              configuration management to improve developer productivity and
               reduce onboarding time
             </li>
             <li>
               Enhanced deployment pipeline robustness and optimized build
-              performance across multiple team environments; implemented
-              caching strategies, parallel execution, and infrastructure
-              optimizations that reduced environment provisioning time by 40%
-              and code deployment cycles by 30%
+              performance across multiple team environments; implemented caching
+              strategies, parallel execution, and infrastructure optimizations
+              that reduced environment provisioning time by 40% and code
+              deployment cycles by 30%
             </li>
           </ul>
         </>

@@ -44,8 +44,8 @@ export function Certifications({ certifications }: CertificationsProps) {
     <Section>
       <h2 className="text-xl font-bold">Certifications</h2>
       <div className="flex flex-col gap-3">
-        {certifications.map((cert, index) => (
-          <CertificationItem key={index} cert={cert} />
+        {certifications.map((cert) => (
+          <CertificationItem key={`${cert.title}-${cert.issuer}`} cert={cert} />
         ))}
       </div>
     </Section>
