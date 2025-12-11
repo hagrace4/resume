@@ -76,6 +76,25 @@ export const RESUME_DATA: ResumeData = {
               templates to standardize build/test/deploy across teams; improved
               reliability and delivery speed
             </li>
+            <li>
+              Provided 24/7 on-call support for production deployments and
+              incident response; monitored system health, troubleshot critical
+              issues, and coordinated emergency patches to maintain 99.9%
+              application uptime and minimize business impact
+            </li>
+            <li>
+              Administered Java web application deployments across multi-tier
+              environments; managed application server configurations, JVM
+              tuning, database connections, and coordinated blue-green
+              deployments to ensure zero-downtime releases
+            </li>
+            <li>
+              Architected and implemented CI/CD pipelines for microservices and
+              security engineering initiatives; integrated automated security
+              scanning (SAST/DAST), container vulnerability assessments, and
+              compliance checks into deployment workflows, reducing security
+              remediation time
+            </li>
           </ul>
         </>
       ),
