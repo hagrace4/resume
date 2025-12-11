@@ -106,8 +106,6 @@ export const RESUME_DATA: ResumeData = {
               Enhanced deployment pipeline robustness and optimized build
               performance across multiple team environments; implemented caching
               strategies, parallel execution, and infrastructure optimizations
-              that reduced environment provisioning time by 40% and code
-              deployment cycles by 30%
             </li>
           </ul>
         </>
