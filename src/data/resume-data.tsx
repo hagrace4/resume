@@ -163,6 +163,7 @@ export const RESUME_DATA: ResumeData = {
     "KMS",
     "Ansible",
     "systemd",
+    "pgadmin",
     "Git",
     "GitLab",
     "SSL/TLS",
@@ -251,6 +252,16 @@ export const RESUME_DATA: ResumeData = {
       ],
       description:
         "Built repeatable dev/stage/prod environments using modular CloudFormation stacks (VPC, subnets, routing, security groups, compute/database layers). Parameterized templates for account/region reuse and authored runbooks enabling self-service provisioning.",
+      link: {
+        label: "",
+        href: "",
+      },
+    },
+    {
+      title: "Stalwart Email Server Deployment",
+      techStack: ["Stalwart", "Postgres","Docker", "pgadmin"],
+      description:
+        "Installed, configured, and implemented a Stalwart email server backed by Postgres. Provisioned and validated database connectivity, tuned core mail services, and verified end-to-end mail flow for a production-ready setup.",
       link: {
         label: "",
         href: "",
