@@ -193,7 +193,7 @@ export const RESUME_DATA: ResumeData = {
       title: "Certified Cloud Native Platform Engineering Associate (CNPA)",
       issuer: "Cloud Native Computing Foundation",
       date: "In Progress",
-      status: "in-progress",
+      status: "active",
     },
     {
       title: "Amateur Radio License — Technician Class",
