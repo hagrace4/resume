@@ -259,12 +259,7 @@ export const RESUME_DATA: ResumeData = {
     },
     {
       title: "Stalwart Email Server Deployment",
-      techStack: [
-        "Stalwart",
-        "Postgres",
-        "Docker",
-        "pgadmin"
-      ],
+      techStack: ["Stalwart", "Postgres", "Docker", "pgadmin"],
       description:
         "Installed, configured, and implemented a Stalwart email server backed by Postgres. Provisioned and validated database connectivity, tuned core mail services, and verified end-to-end mail flow for a production-ready setup.",
       link: {
