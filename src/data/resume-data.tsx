@@ -216,8 +216,8 @@ export const RESUME_DATA: ResumeData = {
       description:
         "Built a Progressive Web App for CNPA exam prep with 100+ practice questions, randomized quiz attempts, offline support, and client-side progress tracking with IndexedDB. Added detailed explanations and difficulty levels with a responsive UI for mobile and desktop.",
       link: {
-        label: "",
-        href: "",
+        label: "github.com",
+        href: "https://github.com/hagrace4/cnpa-quiz-app",
       },
     },
     {
