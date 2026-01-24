@@ -204,6 +204,26 @@ export const RESUME_DATA: ResumeData = {
   ],
   projects: [
     {
+      title: "ML Pipeline Deployment System",
+      techStack: [
+        "Python",
+        "Kubernetes (K3s)",
+        "PyTorch",
+        "XGBoost",
+        "MLflow",
+        "FastAPI",
+        "Prometheus",
+        "Grafana",
+        "GitHub Actions",
+      ],
+      description:
+        "Built an end-to-end MLOps pipeline for a homelab K3s cluster with GPU-accelerated training, model registry/versioning, and FastAPI inference services. Implemented config management, structured logging, Prometheus metrics, and property-based tests; CI/CD runs via GitHub Actions with self-hosted runners.",
+      link: {
+        label: "github.com",
+        href: "https://github.com/hagrace4/ml-pipeline-deployment",
+      },
+    },
+    {
       title: "CNPA Quiz App (PWA)",
       techStack: [
         "JavaScript",
