@@ -204,6 +204,23 @@ export const RESUME_DATA: ResumeData = {
   ],
   projects: [
     {
+      title: "CNPA Quiz App (PWA)",
+      techStack: [
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "PWA",
+        "Service Worker",
+        "IndexedDB",
+      ],
+      description:
+        "Built a Progressive Web App for CNPA exam prep with 100+ practice questions, randomized quiz attempts, offline support, and client-side progress tracking with IndexedDB. Added detailed explanations and difficulty levels with a responsive UI for mobile and desktop.",
+      link: {
+        label: "",
+        href: "",
+      },
+    },
+    {
       title: "Automated Resume Deployment with GitHub Actions",
       techStack: [
         "GitHub Actions",
