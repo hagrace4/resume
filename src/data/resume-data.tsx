@@ -224,6 +224,23 @@ export const RESUME_DATA: ResumeData = {
       },
     },
     {
+      title: "FCC Element 2 Quiz (PWA)",
+      techStack: [
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "PWA",
+        "Service Worker",
+        "IndexedDB",
+      ],
+      description:
+        "Built a Progressive Web App for studying for the FCC Amateur Radio Technician Class license exam. Features all 409 official questions from the 2022-2026 NCVEC question pool, exam-accurate 35-question distribution across 10 subelements, 74% passing threshold, offline support via Service Workers, and progress persistence with IndexedDB.",
+      link: {
+        label: "github.com",
+        href: "https://github.com/hagrace4/fcc-element2-quiz",
+      },
+    },
+    {
       title: "CNPA Quiz App (PWA)",
       techStack: [
         "JavaScript",
