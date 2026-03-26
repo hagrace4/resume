@@ -197,7 +197,7 @@ export const RESUME_DATA: ResumeData = {
     },
     {
       title: "Amateur Radio License — Technician Class",
-      issuer: "FCC",
+      issuer: "FCC • KO6MYG",
       date: "Active",
       status: "active",
     },
