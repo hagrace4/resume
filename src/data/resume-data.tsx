@@ -56,7 +56,17 @@ export const RESUME_DATA: ResumeData = {
       description: (
         <>
           <ul className="list-inside list-disc">
-            <li>Placeholder — add responsibilities here</li>
+            <li>
+              Architected a centralized crontab management system spanning
+              production and lower environments, leveraging Ansible modules and
+              GitLab CI/CD pipelines to eliminate manual scheduled task changes
+              and standardize cron provisioning across the fleet
+            </li>
+            <li>
+              Spearheaded the development of Codex skills for IT Operations
+              teams, establishing organization-wide standards for AI-assisted
+              workflows and driving measurable increases in automation adoption
+            </li>
           </ul>
         </>
       ),
