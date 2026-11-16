@@ -95,6 +95,12 @@ export const RESUME_DATA: ResumeData = {
               hosts, scoped credential profiles, validated writes, and readback
               verification
             </li>
+            <li>
+              Part of the team that led the application server migration from
+              Resin to Tomcat, moving the Java application tier onto Tomcat
+              across deployment, configuration, and validation steps through
+              cutover
+            </li>
           </ul>
         </>
       ),
@@ -211,6 +217,8 @@ export const RESUME_DATA: ResumeData = {
     "Akamai",
     "Docker",
     "Kubernetes (K3s)",
+    "Tomcat",
+    "Java",
     "systemd",
     "Oracle Linux",
     "pgadmin",
