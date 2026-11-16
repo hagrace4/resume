@@ -44,7 +44,16 @@ export function Skills({ skills, className }: SkillsProps) {
       <h2 className="text-xl font-bold" id="skills-section">
         Skills
       </h2>
-      <SkillsList skills={skills} aria-labelledby="skills-section" />
+      <SkillsList
+        skills={skills}
+        className="print:hidden"
+        aria-labelledby="skills-section"
+      />
+      {/* Print/ATS layer: comma-separated so terms extract as discrete skills
+          instead of one space-separated run-on. */}
+      <p className="hidden text-pretty font-mono text-sm text-foreground/80 print:block print:text-[11px]">
+        {skills.join(", ")}
+      </p>
     </Section>
   );
 }

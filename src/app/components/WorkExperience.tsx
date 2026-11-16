@@ -94,19 +94,26 @@ function WorkExperienceItem({ work }: WorkExperienceItemProps) {
     <Card className="py-1 print:py-0">
       <CardHeader className="print:space-y-1">
         <div className="flex items-center justify-between gap-x-2 text-base">
-          <h3 className="inline-flex items-center justify-center gap-x-1 font-semibold leading-none print:text-sm">
-            <CompanyLink company={company} link={link} />
+          <div className="flex items-center gap-x-1">
+            <h3 className="inline-flex items-center justify-center font-semibold leading-none print:text-sm">
+              <CompanyLink company={company} link={link} />
+            </h3>
             <BadgeList
-              className="hidden gap-x-1 sm:inline-flex"
+              className="hidden gap-x-1 sm:inline-flex print:hidden"
               badges={badges}
             />
-          </h3>
+          </div>
           <WorkPeriod start={start} end={end} />
         </div>
 
         <h4 className="font-mono text-sm font-semibold leading-none print:text-[12px]">
           {title}
         </h4>
+        {/* Print-only plain line: keeps stack tokens out of the company/date line,
+            where ATS parsers read the first token as the employer. */}
+        <div className="hidden font-mono text-xs text-foreground/80 print:block print:text-[10px]">
+          {badges.join(" · ")}
+        </div>
       </CardHeader>
 
       <CardContent>
@@ -115,7 +122,7 @@ function WorkExperienceItem({ work }: WorkExperienceItemProps) {
         </div>
         <div className="mt-2">
           <BadgeList
-            className="-mx-2 flex-wrap gap-1 sm:hidden"
+            className="-mx-2 flex-wrap gap-1 sm:hidden print:hidden"
             badges={badges}
           />
         </div>
