@@ -57,15 +57,43 @@ export const RESUME_DATA: ResumeData = {
         <>
           <ul className="list-inside list-disc">
             <li>
-              Architected a centralized crontab management system spanning
-              production and lower environments, leveraging Ansible modules and
-              GitLab CI/CD pipelines to eliminate manual scheduled task changes
-              and standardize cron provisioning across the fleet
+              Designed and shipped a native Linux cron management system with
+              centralized review, deployment, and drift detection: GitLab review
+              to CodeCommit source, Ansible Automation Platform plan/apply, and
+              readback reports; 50 passing tests and a validated pipeline before
+              operator handoff
             </li>
             <li>
-              Spearheaded the development of Codex skills for IT Operations
-              teams, establishing organization-wide standards for AI-assisted
-              workflows and driving measurable increases in automation adoption
+              Built a three-stage SendGrid onboarding workflow in Ansible Tower
+              covering shared, company-owned, and client-owned sender domains:
+              provisioning, legacy DKIM preparation, and DNS publish/validate,
+              with 65 unit tests, offline failure-mode scenarios, checkpointed
+              recovery, and activation kept separate from preparation
+            </li>
+            <li>
+              Ran the UA2 SQS load-test analysis across 60 application servers,
+              12 batch servers, one file server, and RDS; read-only CloudWatch
+              collection and tier-by-tier comparison identified RDS as the
+              constrained tier, with peak CPU moving from 99.55% to 86.03% and
+              run duration from 15 to 11 minutes alongside application fixes
+            </li>
+            <li>
+              Modeled AWS spend for 16 environments across three architecture
+              scenarios and two pricing tiers, identifying roughly $6,220 per
+              year in modeled reserved-pricing opportunity and documenting
+              instance-replacement billing distortions in Cost Explorer
+            </li>
+            <li>
+              Audited fleet patching across four Ansible Tower instances and
+              approximately 449 servers, recording nine gaps in schedule
+              coverage, boot-kernel handling, and playbook logic, then converted
+              the findings into runbooks and preflight checks
+            </li>
+            <li>
+              Built Codex skills and MCP-based read-only tooling for Jira,
+              GitLab, AWS, and Ansible Tower with enforced guardrails: pinned
+              hosts, scoped credential profiles, validated writes, and readback
+              verification
             </li>
           </ul>
         </>
@@ -82,17 +110,18 @@ export const RESUME_DATA: ResumeData = {
         <>
           <ul className="list-inside list-disc">
             <li>
-              Led AWS environment provisioning via modular CloudFormation (VPC,
-              subnets, routing, security groups, EC2/RDS) with parameterized
-              stacks and change sets; integrated Ansible for post-provision
-              bootstrapping
+              Led AWS environment provisioning as Infrastructure as Code with
+              modular CloudFormation (VPC, subnets, routing, security groups,
+              EC2/RDS), parameterized stacks and change sets; integrated Ansible
+              for post-provision bootstrapping
             </li>
             <li>
               Linux systems engineering & operations: standardized Amazon
               Linux/OL8 baselines with Ansible; managed systemd services,
-              SELinux, firewalld, and OS patch cycles; implemented user/sudo &
-              SSH key management, logrotate/auditd, and kernel/network tuning
-              for production reliability
+              SELinux, firewalld policy, and OS patch cycles; implemented
+              role-based access control (RBAC) for users, sudo, and SSH keys,
+              plus logrotate/auditd and kernel/network tuning for production
+              reliability
             </li>
             <li>
               Managed and owned GitLab and org-wide CI/CD: administered runners,
@@ -119,18 +148,6 @@ export const RESUME_DATA: ResumeData = {
               scanning (SAST/DAST), container vulnerability assessments, and
               compliance checks into deployment workflows, reducing security
               remediation time by 60%
-            </li>
-            <li>
-              Developed comprehensive Ansible automation scripts for developer
-              team environments, reducing cognitive load and accelerating inner
-              loop development cycles; standardized environment provisioning and
-              configuration management to improve developer productivity and
-              reduce onboarding time
-            </li>
-            <li>
-              Enhanced deployment pipeline robustness and optimized build
-              performance across multiple team environments; implemented caching
-              strategies, parallel execution, and infrastructure optimizations
             </li>
           </ul>
         </>
@@ -176,27 +193,42 @@ export const RESUME_DATA: ResumeData = {
     "Python",
     "Bash",
     "YAML",
+    "Infrastructure as Code (IaC)",
     "AWS CloudFormation",
+    "Ansible",
+    "Ansible Tower/AAP",
+    "AWS",
     "Route53",
     "ACM",
     "EC2",
     "RDS",
     "VPC",
     "S3",
+    "SQS",
     "CloudWatch",
     "SSM",
     "KMS",
-    "Ansible",
+    "Akamai",
+    "Docker",
+    "Kubernetes (K3s)",
     "systemd",
+    "Oracle Linux",
     "pgadmin",
     "Git",
     "GitLab",
+    "GitLab CI/CD",
+    "RBAC",
     "SSL/TLS",
     "DNS",
+    "Postfix",
+    "OpenDKIM",
     "DKIM/DMARC/SPF",
     "Splunk",
+    "Grafana",
     "Nagios",
     "Checkmk",
+    "MCP",
+    "Codex",
     "Linux",
     "Windows",
     "macOS",
@@ -248,40 +280,7 @@ export const RESUME_DATA: ResumeData = {
         href: "https://github.com/hagrace4/ml-pipeline-deployment",
       },
     },
-    {
-      title: "FCC Element 2 Quiz (PWA)",
-      techStack: [
-        "JavaScript",
-        "HTML",
-        "CSS",
-        "PWA",
-        "Service Worker",
-        "IndexedDB",
-      ],
-      description:
-        "Built a Progressive Web App for studying for the FCC Amateur Radio Technician Class license exam. Features all 409 official questions from the 2022-2026 NCVEC question pool, exam-accurate 35-question distribution across 10 subelements, 74% passing threshold, offline support via Service Workers, and progress persistence with IndexedDB.",
-      link: {
-        label: "github.com",
-        href: "https://github.com/hagrace4/fcc-element2-quiz",
-      },
-    },
-    {
-      title: "CNPA Quiz App (PWA)",
-      techStack: [
-        "JavaScript",
-        "HTML",
-        "CSS",
-        "PWA",
-        "Service Worker",
-        "IndexedDB",
-      ],
-      description:
-        "Built a Progressive Web App for CNPA exam prep with 100+ practice questions, randomized quiz attempts, offline support, and client-side progress tracking with IndexedDB. Added detailed explanations and difficulty levels with a responsive UI for mobile and desktop.",
-      link: {
-        label: "github.com",
-        href: "https://github.com/hagrace4/cnpa-quiz-app",
-      },
-    },
+
     {
       title: "Automated Resume Deployment with GitHub Actions",
       techStack: [
