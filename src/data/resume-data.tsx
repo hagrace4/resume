@@ -57,11 +57,11 @@ export const RESUME_DATA: ResumeData = {
         <>
           <ul className="list-inside list-disc">
             <li>
-              Designed and shipped a native Linux cron management system with
-              centralized review, deployment, and drift detection: GitLab review
-              to CodeCommit source, Ansible Automation Platform plan/apply, and
-              readback reports; 50 passing tests and a validated pipeline before
-              operator handoff
+              Designed and shipped a native Linux cron management system in
+              Python and Bash with Ansible Automation Platform: centralized
+              review, deployment, and drift detection from GitLab review to
+              CodeCommit source, plan/apply, and readback reports; 50 passing
+              tests and a validated pipeline before operator handoff
             </li>
             <li>
               Built a three-stage SendGrid onboarding workflow in Ansible Tower
