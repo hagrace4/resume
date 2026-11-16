@@ -99,7 +99,7 @@ function WorkExperienceItem({ work }: WorkExperienceItemProps) {
               <CompanyLink company={company} link={link} />
             </h3>
             <BadgeList
-              className="hidden gap-x-1 sm:inline-flex print:hidden"
+              className="hidden gap-x-1 sm:inline-flex print:!hidden"
               badges={badges}
             />
           </div>
