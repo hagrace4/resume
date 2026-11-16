@@ -90,10 +90,10 @@ export const RESUME_DATA: ResumeData = {
               the findings into runbooks and preflight checks
             </li>
             <li>
-              Built Codex skills and MCP-based read-only tooling for Jira,
-              GitLab, AWS, and Ansible Tower with enforced guardrails: pinned
-              hosts, scoped credential profiles, validated writes, and readback
-              verification
+              Built Codex and Factory Droid skills plus MCP-based read-only
+              tooling for Jira, GitLab, AWS, and Ansible Tower with enforced
+              guardrails: pinned hosts, scoped credential profiles, validated
+              writes, and readback verification
             </li>
             <li>
               Part of the team that led the application server migration from
@@ -237,6 +237,7 @@ export const RESUME_DATA: ResumeData = {
     "Checkmk",
     "MCP",
     "Codex",
+    "Factory Droid",
     "Linux",
     "Windows",
     "macOS",
