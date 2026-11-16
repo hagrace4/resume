@@ -3,8 +3,8 @@ import type { ResumeData } from "@/lib/types";
 export const RESUME_DATA: ResumeData = {
   name: "Harry Grace",
   initials: "HG",
-  location: "Northridge, CA",
-  locationLink: "https://www.google.com/maps/place/Northridge,+CA",
+  location: "West Des Moines, IA",
+  locationLink: "https://www.google.com/maps/place/West+Des+Moines,+IA",
   about: "DevOps Engineer specializing in AWS infrastructure and automation.",
   summary: (
     <>
