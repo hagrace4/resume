@@ -100,6 +100,14 @@ export const RESUME_DATA: ResumeData = {
               writes, and readback verification
             </li>
             <li>
+              Implemented a public GitLab CI/CD OIDC issuer so Azure workload
+              identity could federate without exposing the private GitLab
+              UI/API: only discovery metadata and JWKS published, served through
+              CloudFront and WAF in front of private S3 with origin access
+              control, and synchronized by a systemd timer using the host's
+              instance role
+            </li>
+            <li>
               Part of the team that led the application server migration from
               Resin to Tomcat, moving the Java application tier onto Tomcat
               across deployment, configuration, and validation steps through
@@ -202,6 +210,7 @@ export const RESUME_DATA: ResumeData = {
   skills: [
     "Python",
     "Bash",
+    "Go",
     "Infrastructure as Code (IaC)",
     "AWS CloudFormation",
     "OpenTofu / Terraform",
@@ -303,6 +312,16 @@ export const RESUME_DATA: ResumeData = {
       link: {
         label: "github.com",
         href: "https://github.com/hagrace4/homelab-k8s",
+      },
+    },
+    {
+      title: "Go Operations-Agent Harness (pre-release)",
+      techStack: ["Go", "Fyne", "SQLite", "MCP"],
+      description:
+        "Built a local pre-release Go operations harness — daemon, Fyne desktop client and headless CLI — with SQLite run history, bounded turns and pause/stop/resume, per-operation approvals bound to target and expiry, source-linked evidence with contradiction handling, and offline backup/restore that invalidates prior approvals. Provider adapters tested against fixtures, with recorded CLI and native smoke checks.",
+      link: {
+        label: "",
+        href: "",
       },
     },
 
