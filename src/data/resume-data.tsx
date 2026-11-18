@@ -6,7 +6,7 @@ export const RESUME_DATA: ResumeData = {
   location: "West Des Moines, IA",
   locationLink: "https://www.google.com/maps/place/West+Des+Moines,+IA",
   about:
-    "Platform engineer building AWS infrastructure, CI/CD and the automation that makes delivery repeatable.",
+    "DevOps engineer building AWS infrastructure, CI/CD and the automation that makes delivery repeatable.",
   summary: (
     <>
       Three-plus years of AWS and Linux infrastructure work, from internship
