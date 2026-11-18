@@ -5,7 +5,8 @@ export const RESUME_DATA: ResumeData = {
   initials: "HG",
   location: "West Des Moines, IA",
   locationLink: "https://www.google.com/maps/place/West+Des+Moines,+IA",
-  about: "Platform engineer building AWS infrastructure, CI/CD and the automation that makes delivery repeatable.",
+  about:
+    "Platform engineer building AWS infrastructure, CI/CD and the automation that makes delivery repeatable.",
   summary: (
     <>
       Three-plus years of AWS and Linux infrastructure work, from internship
@@ -66,8 +67,8 @@ export const RESUME_DATA: ResumeData = {
               passing tests and a validated pipeline before operator handoff
             </li>
             <li>
-              Standardized sender-domain onboarding as a three-stage workflow
-              in Ansible Tower covering shared, company-owned, and client-owned
+              Standardized sender-domain onboarding as a three-stage workflow in
+              Ansible Tower covering shared, company-owned, and client-owned
               domains: provisioning, legacy DKIM preparation, and DNS
               publish/validate, with 65 unit tests, offline failure-mode
               scenarios, checkpointed recovery, and activation kept separate
@@ -87,10 +88,10 @@ export const RESUME_DATA: ResumeData = {
               instance-replacement billing distortions in Cost Explorer
             </li>
             <li>
-              Audited patch lifecycle automation across four Ansible Tower instances and
-              approximately 449 servers, recording nine gaps in schedule
-              coverage, boot-kernel handling, and playbook logic, then converted
-              the findings into runbooks and preflight checks
+              Audited patch lifecycle automation across four Ansible Tower
+              instances and approximately 449 servers, recording nine gaps in
+              schedule coverage, boot-kernel handling, and playbook logic, then
+              converted the findings into runbooks and preflight checks
             </li>
             <li>
               Built Codex and Factory Droid skills plus MCP-based read-only
@@ -136,9 +137,8 @@ export const RESUME_DATA: ResumeData = {
               Owned GitLab and org-wide CI/CD as a shared delivery platform:
               administered runners, optimized pipelines (caching, artifacts,
               parallelization), enforced protected branches and merge checks,
-              and created reusable templates that standardized
-              build/test/deploy across teams; improved reliability and delivery
-              speed
+              and created reusable templates that standardized build/test/deploy
+              across teams; improved reliability and delivery speed
             </li>
             <li>
               Provided 24/7 on-call support for production deployments and
