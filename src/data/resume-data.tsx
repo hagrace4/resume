@@ -5,12 +5,14 @@ export const RESUME_DATA: ResumeData = {
   initials: "HG",
   location: "West Des Moines, IA",
   locationLink: "https://www.google.com/maps/place/West+Des+Moines,+IA",
-  about: "DevOps Engineer specializing in AWS infrastructure and automation.",
+  about: "Platform engineer building AWS infrastructure, CI/CD and the automation that makes delivery repeatable.",
   summary: (
     <>
-      DevOps Engineer with expertise in AWS cloud infrastructure, Linux systems
-      engineering, and CI/CD automation. Experienced in CloudFormation, Ansible,
-      GitLab administration, and building scalable, reliable production systems.
+      Three-plus years of AWS and Linux infrastructure work, from internship
+      through DevOps Engineer II. I build internal platform capabilities:
+      self-service provisioning, reusable CI/CD templates, and infrastructure
+      automation in CloudFormation, OpenTofu, Ansible, and GitLab CI as a shared
+      delivery path across teams.
     </>
   ),
   avatarUrl: "https://harrygrace.me/images/avatar.jpg",
@@ -57,18 +59,19 @@ export const RESUME_DATA: ResumeData = {
         <>
           <ul className="list-inside list-disc">
             <li>
-              Designed and shipped a native Linux cron management system in
-              Python and Bash with Ansible Automation Platform: centralized
-              review, deployment, and drift detection from GitLab review to
-              CodeCommit source, plan/apply, and readback reports; 50 passing
-              tests and a validated pipeline before operator handoff
+              Replaced manual cron edits with an automated scheduling deployment
+              path in Python and Bash on Ansible Automation Platform:
+              centralized review, deployment, and drift detection from GitLab
+              review to CodeCommit source, plan/apply, and readback reports; 50
+              passing tests and a validated pipeline before operator handoff
             </li>
             <li>
-              Built a three-stage SendGrid onboarding workflow in Ansible Tower
-              covering shared, company-owned, and client-owned sender domains:
-              provisioning, legacy DKIM preparation, and DNS publish/validate,
-              with 65 unit tests, offline failure-mode scenarios, checkpointed
-              recovery, and activation kept separate from preparation
+              Standardized sender-domain onboarding as a three-stage workflow
+              in Ansible Tower covering shared, company-owned, and client-owned
+              domains: provisioning, legacy DKIM preparation, and DNS
+              publish/validate, with 65 unit tests, offline failure-mode
+              scenarios, checkpointed recovery, and activation kept separate
+              from preparation
             </li>
             <li>
               Ran the UA2 SQS load-test analysis across 60 application servers,
@@ -84,7 +87,7 @@ export const RESUME_DATA: ResumeData = {
               instance-replacement billing distortions in Cost Explorer
             </li>
             <li>
-              Audited fleet patching across four Ansible Tower instances and
+              Audited patch lifecycle automation across four Ansible Tower instances and
               approximately 449 servers, recording nine gaps in schedule
               coverage, boot-kernel handling, and playbook logic, then converted
               the findings into runbooks and preflight checks
@@ -116,7 +119,7 @@ export const RESUME_DATA: ResumeData = {
         <>
           <ul className="list-inside list-disc">
             <li>
-              Led AWS environment provisioning as Infrastructure as Code with
+              Led AWS environment provisioning as a self-service IaC platform:
               modular CloudFormation (VPC, subnets, routing, security groups,
               EC2/RDS), parameterized stacks and change sets; integrated Ansible
               for post-provision bootstrapping
@@ -130,11 +133,12 @@ export const RESUME_DATA: ResumeData = {
               reliability
             </li>
             <li>
-              Managed and owned GitLab and org-wide CI/CD: administered runners,
-              optimized pipelines (caching, artifacts, parallelization),
-              enforced protected branches and merge checks, and created reusable
-              templates to standardize build/test/deploy across teams; improved
-              reliability and delivery speed
+              Owned GitLab and org-wide CI/CD as a shared delivery platform:
+              administered runners, optimized pipelines (caching, artifacts,
+              parallelization), enforced protected branches and merge checks,
+              and created reusable templates that standardized
+              build/test/deploy across teams; improved reliability and delivery
+              speed
             </li>
             <li>
               Provided 24/7 on-call support for production deployments and
@@ -198,11 +202,15 @@ export const RESUME_DATA: ResumeData = {
   skills: [
     "Python",
     "Bash",
-    "YAML",
     "Infrastructure as Code (IaC)",
     "AWS CloudFormation",
+    "OpenTofu / Terraform",
     "Ansible",
     "Ansible Tower/AAP",
+    "Configuration Management",
+    "CI/CD Pipelines",
+    "Kubernetes (K3s)",
+    "Docker",
     "AWS",
     "Route53",
     "ACM",
@@ -212,11 +220,11 @@ export const RESUME_DATA: ResumeData = {
     "S3",
     "SQS",
     "CloudWatch",
+    "Observability",
+    "Incident Response",
     "SSM",
     "KMS",
     "Akamai",
-    "Docker",
-    "Kubernetes (K3s)",
     "Tomcat",
     "Java",
     "systemd",
@@ -239,8 +247,6 @@ export const RESUME_DATA: ResumeData = {
     "Codex",
     "Factory Droid",
     "Linux",
-    "Windows",
-    "macOS",
   ],
   certifications: [
     {
@@ -289,6 +295,16 @@ export const RESUME_DATA: ResumeData = {
         href: "https://github.com/hagrace4/ml-pipeline-deployment",
       },
     },
+    {
+      title: "Talos Kubernetes Cluster on Proxmox",
+      techStack: ["OpenTofu", "Talos", "Kubernetes", "Proxmox"],
+      description:
+        "Provisioned a Talos Kubernetes cluster on Proxmox from declarative OpenTofu: a reusable VM module driven by for_each over control-plane and worker maps, a pinned bpg/proxmox provider, and Talos's real constraints — UEFI/OVMF firmware, host CPU type, guest agent in the install image — encoded in code rather than a runbook.",
+      link: {
+        label: "github.com",
+        href: "https://github.com/hagrace4/homelab-k8s",
+      },
+    },
 
     {
       title: "Automated Resume Deployment with GitHub Actions",
@@ -301,7 +317,7 @@ export const RESUME_DATA: ResumeData = {
         "CI/CD",
       ],
       description:
-        "Built end-to-end CI/CD pipeline using GitHub Actions to automatically build, test, containerize, and deploy a Next.js resume application to Oracle Cloud Infrastructure. Implemented automated Docker image builds with GitHub Container Registry, SSH-based deployment automation, and container lifecycle management with health checks and rollback capabilities.",
+        "Built an end-to-end GitHub Actions pipeline that builds, tests, containerizes, and deploys a Next.js app to Oracle Cloud Infrastructure: Docker image builds to GitHub Container Registry, SSH deployment automation, and container lifecycle management with health checks and rollback.",
       link: {
         label: "github.com",
         href: "https://github.com/hagrace4/resume",
@@ -321,7 +337,7 @@ export const RESUME_DATA: ResumeData = {
       title: "Containerization Rollout",
       techStack: ["Ansible", "Docker", "JVM", "Configuration Management"],
       description:
-        "Authored/updated Ansible roles and plays to deploy containers with parameterized JVM options and environment variables. Implemented environment-specific configuration to eliminate server drift and coordinated change controls for each stage.",
+        "Authored Ansible roles and plays to deploy containers with parameterized JVM options and environment variables, with environment-specific configuration to eliminate server drift and change controls coordinated per stage.",
       link: {
         label: "",
         href: "",
